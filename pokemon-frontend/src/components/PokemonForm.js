@@ -34,7 +34,7 @@ function PokemonForm() {
 
   return (
     <div>
-      <h1>Pokémon Team Analysis</h1>
+      <h1>Pomntv Pokémon Team Analysis Project Demo</h1>
       <form onSubmit={handleSubmit}>
         {team.map((pokemon, index) => (
           <div key={index}>
