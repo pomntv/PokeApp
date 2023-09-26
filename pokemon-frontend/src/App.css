@@ -1,5 +1,38 @@
+/* General App Styling */
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #61dafb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4fa8d5;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+}
 .App {
   text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
 .App-logo {
@@ -15,12 +48,9 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
@@ -35,4 +65,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Dropdown Styling */
+.pokemon-select .react-select__control {
+  width: 250px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 16px;
+}
+
+.pokemon-select .react-select__menu {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-select .react-select__option {
+  padding: 10px 15px;
+}
+
+.pokemon-select .react-select__option--is-focused {
+  background-color: #e9e9e9;
+}
+
+.pokemon-select .react-select__option--is-selected {
+  background-color: #61dafb;
+  color: white;
 }
