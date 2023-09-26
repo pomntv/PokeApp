@@ -88,12 +88,15 @@ function PokemonForm() {
                     const pokemonData = defensiveData.find(p => p.name === (team[index] && team[index].name));
                     const value = pokemonData ? pokemonData[type.toLowerCase()] : '';
                     let className = '';
-                    if (value > 1) className = 'color-red';
+                    if (value === 0) className = 'color-black';
+                    else if (value > 1) className = 'color-red';
                     else if (value < 1) className = 'color-green';
-
+                    
                     return (
                         <td key={index} className={className}>
-                            {value !== 1 ? value : ''}
+                            {/* {value !== 1 ? value : ''} */}
+                            {value === 0 ? '0' : (value !== 1 ? value : '')}
+
                         </td>
                     );
                 })}

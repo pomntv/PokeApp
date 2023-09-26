@@ -40,28 +40,28 @@ type Pokemon struct {
 }
 
 type Pokemondef struct {
-	ID       int     `json:"id,omitempty" bson:"id,omitempty"`
-	Name     string  `json:"name,omitempty" bson:"name,omitempty"`
-	Type1    string  `json:"type 1,omitempty" bson:"type 1,omitempty"`
-	Type2    string  `json:"type 2,omitempty" bson:"type 2,omitempty"`
-	Normal   float64 `json:"normal,omitempty" bson:"normal,omitempty"`
-	Fire     float64 `json:"fire,omitempty" bson:"fire,omitempty"`
-	Water    float64 `json:"water,omitempty" bson:"water,omitempty"`
-	Grass    float64 `json:"grass,omitempty" bson:"grass,omitempty"`
-	Electric float64 `json:"electric,omitempty" bson:"electric,omitempty"`
-	Ice      float64 `json:"ice,omitempty" bson:"ice,omitempty"`
-	Fighting float64 `json:"fighting,omitempty" bson:"fighting,omitempty"`
-	Poison   float64 `json:"poison,omitempty" bson:"poison,omitempty"`
-	Ground   float64 `json:"ground,omitempty" bson:"ground,omitempty"`
-	Flying   float64 `json:"flying,omitempty" bson:"flying,omitempty"`
-	Psychic  float64 `json:"psychic,omitempty" bson:"psychic,omitempty"`
-	Bug      float64 `json:"bug,omitempty" bson:"bug,omitempty"`
-	Rock     float64 `json:"rock,omitempty" bson:"rock,omitempty"`
-	Ghost    float64 `json:"ghost,omitempty" bson:"ghost,omitempty"`
-	Dragon   float64 `json:"dragon,omitempty" bson:"dragon,omitempty"`
-	Dark     float64 `json:"dark,omitempty" bson:"dark,omitempty"`
-	Steel    float64 `json:"steel,omitempty" bson:"steel,omitempty"`
-	Fairy    float64 `json:"fairy,omitempty" bson:"fairy,omitempty"`
+	ID       int     `json:"id" bson:"id"`
+	Name     string  `json:"name" bson:"name"`
+	Type1    string  `json:"type 1" bson:"type 1"`
+	Type2    string  `json:"type 2" bson:"type 2"`
+	Normal   float64 `json:"normal" bson:"normal"`
+	Fire     float64 `json:"fire" bson:"fire"`
+	Water    float64 `json:"water" bson:"water"`
+	Grass    float64 `json:"grass" bson:"grass"`
+	Electric float64 `json:"electric" bson:"electric"`
+	Ice      float64 `json:"ice" bson:"ice"`
+	Fighting float64 `json:"fighting" bson:"fighting"`
+	Poison   float64 `json:"poison" bson:"poison"`
+	Ground   float64 `json:"ground" bson:"ground"`
+	Flying   float64 `json:"flying" bson:"flying"`
+	Psychic  float64 `json:"psychic" bson:"psychic"`
+	Bug      float64 `json:"bug" bson:"bug"`
+	Rock     float64 `json:"rock" bson:"rock"`
+	Ghost    float64 `json:"ghost" bson:"ghost"`
+	Dragon   float64 `json:"dragon" bson:"dragon"`
+	Dark     float64 `json:"dark" bson:"dark"`
+	Steel    float64 `json:"steel" bson:"steel"`
+	Fairy    float64 `json:"fairy" bson:"fairy"`
 }
 
 func GetAllPokemon(w http.ResponseWriter, r *http.Request) {
