@@ -5,6 +5,7 @@ import Select from 'react-select';
 function PokemonForm() {
   const [team, setTeam] = useState([{name: '', id: ''}, {name: '', id: ''}, {name: '', id: ''}, {name: '', id: ''}, {name: '', id: ''}, {name: '', id: ''}]);
   const [pokemonOptions, setPokemonOptions] = useState([]);
+  const [defensiveData, setDefensiveData] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/pokemon')
@@ -23,12 +24,13 @@ function PokemonForm() {
     setTeam(newTeam);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle the submission logic here
+    const fetchedData = await axios.get('http://localhost:8080/api/pokemondefensive');
+    setDefensiveData(fetchedData.data);
   };
 
-  const pokemonTypes = ['Normal', 'Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying'];
+  const pokemonTypes = ['Normal', 'Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying','Psychic', 'Bug', 'Rock', 'Ghost', 'Dark', 'Dragon', 'Steel', 'Fairy'];
 
   return (
     <div>
@@ -66,11 +68,15 @@ function PokemonForm() {
           {pokemonTypes.map(type => (
             <tr key={type}>
               <td>{type}</td>
-              {team.map(pokemon => (
-                <td key={pokemon.name}> 
-                   
-                </td>
-              ))}
+              {team.map(pokemon => {
+                const pokemonData = defensiveData.find(p => p.name === pokemon.name);
+                return (
+                  <td key={pokemon.name}> 
+                    
+                    {pokemonData ? pokemonData[type.toLowerCase()] : ''}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

@@ -54,33 +54,58 @@ function PokemonForm() {
       </form>
 
       <table>
-        <thead>
-          <tr>
-            <th>Attack Type</th>
-            {team.map(pokemon => (
-              <th key={pokemon.name}>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={pokemon.name} />
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {pokemonTypes.map(type => (
+    <thead>
+      
+    <tr>
+        <th>Attack Type</th>
+        {Array(6).fill().map((_, index) => (
+            <th key={index}>
+                {team[index] && team[index].name && <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${team[index].id}.png`} alt={team[index].name} />}
+            </th>
+        ))}
+        <th>Total Weak</th>
+        <th>Total Resist</th>
+    </tr>
+    </thead>
+    <tbody>
+    {pokemonTypes.map(type => {
+        let totalWeak = 0;
+        let totalResist = 0;
+
+        team.forEach(pokemon => {
+            const pokemonData = defensiveData.find(p => p.name === pokemon.name);
+            if (pokemonData && pokemonData[type.toLowerCase()] > 1) {
+                totalWeak++;
+            } else if (pokemonData && pokemonData[type.toLowerCase()] < 1) {
+                totalResist++;
+            }
+        });
+
+        return (
             <tr key={type}>
-              <td>{type}</td>
-              {team.map(pokemon => {
-                const pokemonData = defensiveData.find(p => p.name === pokemon.name);
-                return (
-                  <td key={pokemon.name}> 
-                    
-                    {pokemonData ? pokemonData[type.toLowerCase()] : ''}
-                  </td>
-                );
-              })}
+                <td>{type}</td>
+                {Array(6).fill().map((_, index) => {
+                    const pokemonData = defensiveData.find(p => p.name === (team[index] && team[index].name));
+                    const value = pokemonData ? pokemonData[type.toLowerCase()] : '';
+                    let className = '';
+                    if (value > 1) className = 'color-red';
+                    else if (value < 1) className = 'color-green';
+
+                    return (
+                        <td key={index} className={className}>
+                            {value !== 1 ? value : ''}
+                        </td>
+                    );
+                })}
+                <td className="total-weak">{totalWeak}</td>
+                <td className="total-resist">{totalResist}</td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+        );
+    })}
+</tbody>
+
+</table>
+
     </div>
   );
 }

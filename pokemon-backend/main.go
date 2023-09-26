@@ -28,14 +28,22 @@ func InitializeService() {
 
 type Pokemon struct {
 	// ID   string `json:"_id,omitempty" bson:"_id,omitempty"`
-	ID   int    `json:"id,omitempty" bson:"id,omitempty"`
-	Name string `json:"name,omitempty" bson:"name,omitempty"`
+	ID      int    `json:"id,omitempty" bson:"id,omitempty"`
+	Name    string `json:"name,omitempty" bson:"name,omitempty"`
+	HP      int    `json:"hp,omitempty" bson:"hp,omitempty"`
+	Attack  int    `json:"attack,omitempty" bson:"attack,omitempty"`
+	Defense int    `json:"defense,omitempty" bson:"defense,omitempty"`
+	SpAtk   int    `json:"special attack,omitempty" bson:"special attack,omitempty"`
+	SpDef   int    `json:"special defense,omitempty" bson:"special defense,omitempty"`
+	Speed   int    `json:"speed,omitempty" bson:"speed,omitempty"`
 	// Add other fields as needed
 }
 
 type Pokemondef struct {
 	ID       int     `json:"id,omitempty" bson:"id,omitempty"`
 	Name     string  `json:"name,omitempty" bson:"name,omitempty"`
+	Type1    string  `json:"type 1,omitempty" bson:"type 1,omitempty"`
+	Type2    string  `json:"type 2,omitempty" bson:"type 2,omitempty"`
 	Normal   float64 `json:"normal,omitempty" bson:"normal,omitempty"`
 	Fire     float64 `json:"fire,omitempty" bson:"fire,omitempty"`
 	Water    float64 `json:"water,omitempty" bson:"water,omitempty"`

@@ -4,8 +4,10 @@
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-radius: 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 button {
@@ -27,44 +29,6 @@ button:hover {
 label {
   display: block;
   margin-bottom: 20px;
-}
-.App {
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* Dropdown Styling */
@@ -92,5 +56,64 @@ label {
 
 .pokemon-select .react-select__option--is-selected {
   background-color: #61dafb;
+  color: white;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+/* For the Pokémon images */
+th img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Ensure table has 8 columns */
+table {
+  table-layout: fixed;
+}
+
+table th, table td {
+  width: 12.5%;
+}
+
+/* Color Coding */
+.color-light-red {
+  color: #ff7f7f; /* Light red */
+}
+
+.color-red {
+  color: red;
+}
+
+.color-light-green {
+  color: #7fff7f; /* Light green */
+}
+
+.color-green {
+  color: green;
+}
+
+.total-weak {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+.total-resist {
+  background-color: #4cff4c;
   color: white;
 }
